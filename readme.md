@@ -1,12 +1,12 @@
-# Учебный шаблон проекта Portfolio
+# Portfolio project, Mikhail Davydov, start date: 13-01-2020
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/), а так же 
 [последняя версия Yarn](https://yarnpkg.com/ru/docs/install)
 
 ##  Чтобы развернуть проект необходимо:
 ```sh
-$ git clone git@github.com:loftschool/ls-advanced-portfolio.git
-$ cd ls-advanced-portfolio
+$ git clone https://github.com/mikhail-davydov/rockstar.git
+$ cd rockstar
 $ yarn
 ```
 
