@@ -9,7 +9,111 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      .welcome
+        .parallax
+          +image("bg/parallax.png", "parallax__image", "parallax image")
+        section.fullscreen-section
+          .container.welcome__container
+            header.header
+              .header__logo
+                .logo ВА
+              .header__menu
+                - var menu = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                nav.menu
+                  ul.menu__list
+                    each item in menu
+                      li.menu__item
+                        a.menu__link #{item}
+              .header__socials
+                - var socials = ["insta", "vk", "github"];
+                ul.socials__list
+                  each item in socials
+                    li.socials__item
+                      a.socials__link
+                        +icon(item, "socials__icon")
+            .welcome__content
+              .user-info
+                .user-info__desc Личный сайт веб разработчика
+                .user-info__name Владимир Астаханов
+            .welcome__scroll
+              a.scroll-btn
+                .scroll__text Скролл
+                +icon("scroll", "scroll__icon")
+        section.fullscreen-section.about
+          .container.about__container
+            .about__left
+              .author
+                .author__avatar
+                  .avatar
+                    +image("content/user.jpg", "avatar__image", "author image")
+                .author__desc
+                  -
+                    var rows = [
+                      ["Проживаю", "Новосибирск"],
+                      ["Возраст", "27 лет"],
+                      ["Родился", "1 января 1991"]
+                    ]
+                  table.author__data
+                    table.author__data-table
+                      each row in rows
+                        tr.author__data-row
+                          each cell in row
+                            td #{cell}
+            .about__right
+              .about__greeting Привет, меня зовут
+              .about__name Владимир Астаханов
+              .about__desc
+                | Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              .about__text
+                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      section.values
+        .triangle
+        .container
+          .values__title
+            .values__title-text Чем я могу быть полезен вам
+            .values__title-desc
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+          .values__content
+            -
+              var items = [
+                      ["Frontend", ["html5", "css3", "javaScript", "jQueary"]],
+                      ["Backend", ["git", "terminal", "gulp", "webpack"]]
+              ];
+
+            ul.skills-graphic
+              each row in items
+                li.skills-graphic__item
+                  .skills-row
+                    .skills-row__title #{row[0]}
+                    .skills-row__content
+                      ul.skills
+                        each skill in row[1]
+                          li.skills__item
+                            .skill
+                              svg.skill__circle
+                              .skill__title #{skill}
+      section.works
+        .works__title Мои работы
+        .works__content
+          .slider
+            .slider__display
+              img.slider__display-pic
+              .slider__display-thumbs
+                ul.slider-thumbs
+                  li.slider-thumbs__item
+                    a.slider-thumbs__link
+                      img.slider-thumbs__pic
+              .slider__buttons
+                a.direction-btn.direction-btn--next
+                a.direction-btn.direction-btn--prev
+            .slider__info
+              .slider__tags
+                ul.tags__list
+                  li.tags__item html
+                  li.tags__item css
+                  li.tags__item javaScript
+              .slider__info-text
+                h3.slider__info-title
+                .slider__info-desc
+              .slider__info-btn
+                a.icon-link Посмотреть сайт
